@@ -33,7 +33,7 @@ function MovieGrid({ movies, favorites = [], setFavorites }) {
         p-5
       "
     >
-      {movies.map((movie) => {
+      {movies?.map((movie) => {
         const isFavorite = favorites.some(
           (item) => item.id === movie.id
         );
