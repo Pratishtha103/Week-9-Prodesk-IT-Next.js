@@ -114,7 +114,7 @@ function Home({initialMovies}) {
         {error && <p>{error}</p>}
         {
           !loading &&
-          movies.length === 0 && (
+          movies?.length === 0 && (
             <p className="p-5">
               No movies found.
             </p>
