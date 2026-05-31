@@ -1,8 +1,8 @@
 # Week-9 Cine Stream with Next.js
 
-* Implemented Upto Phase 3
+* Track A: Frontend Specialists
 
-* TRACK A: FRONTEND SPECIALISTS
+* Implemented Upto Phase 3
 
 * Server Side Rendering using Next.js file based routing
 
