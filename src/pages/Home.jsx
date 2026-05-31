@@ -12,7 +12,7 @@ import {
 } from "../services/tmdb";
 
 function Home({initialMovies}) {
-  const [movies, setMovies] = useState(initialMovies);
+  const [movies, setMovies] = useState(initialMovies || []);
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
