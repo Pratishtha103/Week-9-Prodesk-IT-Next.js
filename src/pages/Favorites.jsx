@@ -15,13 +15,7 @@ export default function Favorites() {
     setFavorites(stored);
     setLoaded(true);
   }, []);
-  useEffect(() => {
-    if (!loaded) return;
-    localStorage.setItem(
-      "favorites",
-      JSON.stringify(favorites)
-    );
-  }, [favorites, loaded]);
+  
 
   if (favorites.length === 0) {
     return (

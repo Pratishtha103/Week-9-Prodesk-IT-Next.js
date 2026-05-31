@@ -24,3 +24,15 @@ export async function searchMovies(query) {
 
   return response.json();
 }
+
+export async function fetchMovieDetails(id){
+  const response= await fetch(
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
+  );
+
+   if (!response.ok) {
+    return null;
+  }
+
+  return response.json();
+}

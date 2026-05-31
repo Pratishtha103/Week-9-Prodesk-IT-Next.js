@@ -21,12 +21,25 @@ function Home({initialMovies}) {
 
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
-
   async function loadPopularMovies(page) {
     try {
       setLoading(true);
       const data = await fetchPopularMovies(page);
-      setMovies((prev) => page === 1 ? data.results : [...prev, ...data.results]);
+      setMovies((prev) => {
+
+        if (page === 1) {
+          return data.results;
+        }
+
+        const combined = [...prev, ...data.results];
+
+        return combined.filter(
+          (movie, index, self) =>
+            index === self.findIndex(
+              (m) => m.id === movie.id
+            )
+        );
+      });
     } catch (err) {
       setError(err.message);
     } finally {
@@ -54,7 +67,7 @@ function Home({initialMovies}) {
         setMovies([]);
         handleSearch(query);
       } else {
-        setMovies([]);
+        setMovies(initialMovies);
         setPage(1);
       }
     }, 500);
@@ -90,13 +103,6 @@ function Home({initialMovies}) {
 
     setFavorites(stored);
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem(
-      "favorites",
-      JSON.stringify(favorites)
-    );
-  }, [favorites]);
 
   return (
     <div>

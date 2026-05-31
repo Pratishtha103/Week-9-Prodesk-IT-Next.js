@@ -30,4 +30,63 @@ src/components/MovieGrid.jsx (33:38) @ <unknown>
   34 |           (item) => item.id === movie.id
   35 |         );"
 
-""
+"is my favorites url the issue
+import Favorites from "@/pages/Favorites";
+
+export default function Page() {
+  return (
+    <Favorites
+      favorites={[]}
+    />
+  );
+}?"
+
+"why should loadPopularMovies(page) be an async function and not useEffect?"
+
+"do i need to make this async too? 
+import Favorites from "@/pages/Favorites";
+
+export default function Page() {
+  return <Favorites />;
+}
+why or why not"
+
+"is id undefined but why
+Runtime TypeError
+Server
+
+
+
+Cannot read properties of undefined (reading 'id')
+src\app\movie\[id]\page.js (14:50) @ MoviePage
+
+
+  12 | export default async function MoviePage({Params}){
+  13 |     
+> 14 |     const movie = await fetchMovieDetails(Params.id);
+     |                                                  ^
+  15 |
+  16 |     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  17 |     return(
+"
+
+"where should the key be in this
+Console Error
+
+
+Each child in a list should have a unique "key" prop.
+
+Check the render method of `MovieGrid`. See https://react.dev/link/warning-keys for more information.
+src/components/MovieGrid.jsx (42:11) @ <unknown>
+
+
+  40 |
+  41 |         return (
+> 42 |           <Link href={`/movie/${movie.id}`}>
+     |           ^
+  43 |             <div
+  44 |               key={movie.id}
+  45 |               className="
+"
+
+"is layout.js overriding the metadata?"
