@@ -93,7 +93,7 @@ function Home({initialMovies}) {
   // Load popular
   useEffect(() => {
     if (query.trim()) return;
-    if (page === 1 && initialMovies.length > 0) return;
+    if (page === 1 && initialMovies?.length > 0) return;
     loadPopularMovies(page);
   }, [page]);
 
