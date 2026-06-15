@@ -90,3 +90,19 @@ src/components/MovieGrid.jsx (42:11) @ <unknown>
 "
 
 "is layout.js overriding the metadata?"
+
+"what is jest, RTL and jsdom, explain with example"
+
+"On the react testing library site there was only npm install --save-dev @testing-library/react @testing-library/dom, why should i include npm install --save-dev jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event . Explain each of the mentioned technology"
+
+"Explain the next.js configuration file for jest to run with Next.js"
+
+"i did button, next is card and input, how can i see if card renders?, by checking div or card title"
+
+"this means, the data i pass as mock in props or the actual fetched data ?
+
+Execution Criteria: Verify the component mounts without crashing and accurately renders text payloads passed via props."
+
+"what's fireEvent? with example"
+
+""
