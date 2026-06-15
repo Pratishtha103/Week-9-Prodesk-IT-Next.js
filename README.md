@@ -1,4 +1,4 @@
-# Week-9 Cine Stream with Next.js
+# Week-9: Cine Stream with Next.js
 
 * Track A: Frontend Specialists
 
@@ -9,7 +9,7 @@
 
 
 
-# Week 11: Jest and RTL testing
+# Week-11: Jest and RTL testing
 
 * Implemented upto Phase 3
 
