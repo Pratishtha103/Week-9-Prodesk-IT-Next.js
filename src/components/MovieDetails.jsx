@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import Image from "next/image";
 
 export default function MovieDetails({ movie }) {
 
@@ -27,10 +28,12 @@ export default function MovieDetails({ movie }) {
       <NavBar />
 
       <div className="p-6 text-white">
-        <img
+        <Image
           src={imageUrl}
           alt={movie.title}
-          className="w-50 rounded-xl"
+          width={250}
+          height={375}
+          className="rounded-xl"
         />
 
         <h1 className="text-4xl font-bold mt-4">

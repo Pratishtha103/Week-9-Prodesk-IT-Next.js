@@ -1,16 +1,22 @@
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
+
 export async function fetchPopularMovies(page = 1) {
-  const response = await fetch(
-    `${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${page}`
-  );
+  try {
+    const response = await fetch(
+      `${BASE_URL}/movie/popular?api_key=${API_KEY}&page=${page}`
+    );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch popular movies");
+    // console.log(response.status);
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error("TMDB ERROR:", error);
+    throw error;
   }
-
-  return response.json();
 }
 
 export async function searchMovies(query) {

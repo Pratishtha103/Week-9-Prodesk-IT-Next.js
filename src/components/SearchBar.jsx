@@ -1,7 +1,8 @@
-function SearchBar({ query, setQuery }) {
+function SearchBar({ query, setQuery, disabled = false }) {
   return (
     <div className="p-5">
       <input
+        disabled={disabled}
         type="text"
         placeholder="Search movies..."
         value={query}
@@ -12,9 +13,15 @@ function SearchBar({ query, setQuery }) {
           w-full
           p-3
           rounded-lg
-          bg-zinc-800
-          text-white
-          outline-none
+
+          outline
+          outline-black
+
+          bg-white
+          text-black
+
+          dark:bg-zinc-800
+          dark:text-white
         "
       />
     </div>

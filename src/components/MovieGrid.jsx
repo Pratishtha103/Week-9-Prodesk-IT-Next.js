@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import FavoriteButton from "./FavoriteButton";
 
 function MovieGrid({ movies, favorites = [], setFavorites }) {
   function toggleFavorite(movie) {
@@ -15,10 +16,10 @@ function MovieGrid({ movies, favorites = [], setFavorites }) {
 
     setFavorites(updatedFavorites);
 
-    localStorage.setItem(
-      "favorites",
-      JSON.stringify(updatedFavorites)
-    );
+    // localStorage.setItem(
+    //   "favorites",
+    //   JSON.stringify(updatedFavorites)
+    // );
   }
   return (
     <div
@@ -47,14 +48,17 @@ function MovieGrid({ movies, favorites = [], setFavorites }) {
           >
             <div
               className="
-                bg-zinc-900
                 rounded-xl
                 overflow-hidden
-                text-white
                 shadow-lg
                 h-full
                 flex
                 flex-col
+              bg-white
+              text-black
+
+              dark:bg-zinc-900
+              dark:text-white
               "
             >
               <img
@@ -66,20 +70,15 @@ function MovieGrid({ movies, favorites = [], setFavorites }) {
               <div className=" flex justify-between items-center">
                 <h3 className="text-lg font-semibold line-clamp-2">
                   {movie.title}
-                </h3> <button
-                    onClick={(e) =>{
-                      e.preventDefault();
-                      toggleFavorite(movie);
-                    }}
-                    className="
-                      text-2xl
-                      hover:scale-125
-                      transition-transform
-                    "
-                  >
-                    {isFavorite ? "♥" : "♡"}
-                  </button>
-                  </div>
+                </h3> 
+                    <FavoriteButton
+                      isFavorite={isFavorite}
+                      onToggle={(e) => {
+                        e.preventDefault();
+                        toggleFavorite(movie);
+                      }}
+                    />
+              </div>
 
                 <p className="text-zinc-400">
                   {movie.release_date?.split("-")[0]}

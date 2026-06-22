@@ -105,4 +105,6 @@ Execution Criteria: Verify the component mounts without crashing and accurately 
 
 "what's fireEvent? with example"
 
+"Storybook in simple terms, with example"
+
 ""
