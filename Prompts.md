@@ -107,4 +107,20 @@ Execution Criteria: Verify the component mounts without crashing and accurately 
 
 "Storybook in simple terms, with example"
 
+"what should be inside storybook static"
+
+"why does this outline not work
+ className="
+          w-full
+          p-3
+          rounded-lg
+          outline-black
+
+          bg-white
+          text-black
+
+          dark:bg-zinc-800
+          dark:text-white
+        ""
+
 ""
